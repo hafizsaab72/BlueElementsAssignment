@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import "antd/dist/antd.css";
+import Conatiner from "../components/Container";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Conatiner>
+      <Component {...pageProps} />
+    </Conatiner>
+  );
 }
 
-export default MyApp
+export default MyApp;
