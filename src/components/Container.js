@@ -71,10 +71,8 @@ const Conatiner = ({ children }) => {
             >
               {menuItems.map((item) => {
                 return (
-                  <Menu.Item style={{ margin: "50px" }}>
-                    <Link key={item.id} href={item.href}>
-                      {renderIcon(item.title)}
-                    </Link>
+                  <Menu.Item style={{ margin: "50px" }} key={item.id}>
+                    <Link href={item.href}>{renderIcon(item.title)}</Link>
                   </Menu.Item>
                 );
               })}

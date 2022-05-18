@@ -1,14 +1,10 @@
-import react from "react";
 import Image from "next/image";
-import { Table, Tag, Space } from "antd";
+import { Table } from "antd";
+import { useSelector } from "react-redux";
 
-const CustomTable = ({ data }) => {
+const DetailsTable = () => {
+  const { visible } = useSelector((state) => state.articles);
   const columns = [
-    {
-      title: "Author",
-      dataIndex: "author",
-      key: "author",
-    },
     {
       title: "Title",
       dataIndex: "title",
@@ -25,7 +21,7 @@ const CustomTable = ({ data }) => {
       dataIndex: "urlToImage",
       key: "urlToImage",
       render: (url) => (
-        <Image width="200" height="200" layout="responsive" src={url} />
+        <Image width="300" height="300" layout="responsive" src={url} />
       ),
     },
     {
@@ -34,7 +30,14 @@ const CustomTable = ({ data }) => {
       dataIndex: "publishedAt",
     },
   ];
-  return <Table columns={columns} dataSource={data} />;
+  return (
+    <>
+      <h1 className="heading">
+        {visible ? visible[0].author : "Authors Name"}
+      </h1>
+      <Table columns={columns} dataSource={visible} />
+    </>
+  );
 };
 
-export default CustomTable;
+export default DetailsTable;

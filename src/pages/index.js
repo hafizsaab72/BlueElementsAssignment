@@ -7,7 +7,7 @@ const Dashboard = () => {
       <Head>
         <title>Dashboard</title>
       </Head>
-      <h1>This is Dashboard</h1>
+      <h1 className="welcome">This is Dashboard</h1>
     </>
   );
 };
