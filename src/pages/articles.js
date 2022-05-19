@@ -1,7 +1,7 @@
 import axios from "axios";
 import Head from "next/head";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setArticles } from "../redux/articles";
 import { Row, Col } from "antd";
 import AuthorsTable from "../components/AuthorsTable";
